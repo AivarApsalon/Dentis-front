@@ -1,27 +1,29 @@
 <template>
   <div class="registrations">
-    <table border="1">
+
+    <table border="table1">
       <tr>
+        <th>Reg.ID</th>
         <th>Date</th>
         <th>Time</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Id Card Nr</th>
-        <th>Dentist Id</th>
+        <th>Dentist Name</th>
 
       </tr>
       <tr v-for="row in registrations">
+        <td>{{ row.id }}</td>
         <td>{{ row.date }}</td>
         <td>{{ row.time }}</td>
         <td>{{ row.firstName }}</td>
         <td>{{ row.lastName }}</td>
         <td>{{ row.idCardNr }}</td>
-        <td>{{ row.dentistId }}</td>
-
+        <td>{{ row.dentistName }}</td>
       </tr>
+
     </table>
   </div>
-
 
 </template>
 

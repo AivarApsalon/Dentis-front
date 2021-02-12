@@ -7,7 +7,6 @@ import GetRegistration from "@/views/GetRegistration";
 import DeleteRegistration from "@/views/DeleteRegistration";
 import ChangeRegistration from "@/views/ChangeRegistration";
 
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -41,6 +40,7 @@ const routes = [
         name: 'ChangeRegistration',
         component: ChangeRegistration
     },
+
 ]
 
 const router = new VueRouter({

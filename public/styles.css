@@ -37,10 +37,10 @@ nav {
 }
 
 nav ul {
-    margin-left: 40px;
-    padding: 10px;
+    margin-left: 0px;
+    padding: 5px;
     list-style: none;
-    margin-top: 3px;
+    margin-top: -9px;
 
 }
 
@@ -139,13 +139,27 @@ h1 {
 
 }
 
+.registrations{
+    font-size: 18px;
+    padding-top: 160px;
+    font-weight: lighter;
+
+}
+
+th {
+    font-weight: lighter;
+    font-family: sans-serif;
+    text-align: left;
+    background-color: #48558a;
+
+}
+
+.table1 {
+    border-block-width: 25px;
+    table-border-color-light: darkgray;
 
 
-
-
-
-
-
+}
 
 
 

@@ -24,7 +24,6 @@ let getData = function () {
 
 }
 let confirmDelete =function (){
-  // this.$alert("Hello Vue Simple Alert.");
   this.$confirm("Are you sure?")
       .then(() => {
         this.$http.delete('/dentist/delete-registration/' + this.registrationId);
