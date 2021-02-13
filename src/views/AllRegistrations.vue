@@ -12,14 +12,17 @@
         <th>Dentist Name</th>
 
       </tr>
-      <tr v-for="row in registrations">
-        <td>{{ row.id }}</td>
-        <td>{{ row.date }}</td>
-        <td>{{ row.time }}</td>
-        <td>{{ row.firstName }}</td>
-        <td>{{ row.lastName }}</td>
-        <td>{{ row.idCardNr }}</td>
-        <td>{{ row.dentistName }}</td>
+      <tr v-for="registration in registrations">
+        <td>{{ registration.id }}</td>
+        <td>{{ registration.date }}</td>
+        <td>{{ registration.time }}</td>
+        <td>{{ registration.firstName }}</td>
+        <td>{{ registration.lastName }}</td>
+        <td>{{ registration.idCardNr }}</td>
+        <td>{{ registration.dentistName }}</td>
+        <td>
+          <button @click="deleteRegistration(registration.id)">Delete</button>
+        </td>
       </tr>
 
     </table>
@@ -28,16 +31,7 @@
 </template>
 
 <script>
-let getData = function () {
-  this.$http.get('/dentist/registrations')
-      .then(response => this.registrations = response.data)
-      .catch(response => console.log(response))
-
-// @ is an alias to /src
-// let saveInJs = function () {
-//   this.$http.post('/dentist/registrations', this.registrations)
-//       .then(() => this.getData());
-}
+let getData;
 export default {
   name: 'AllRegistrations',
   components: {},
@@ -47,7 +41,21 @@ export default {
     }
   },
   methods: {
-    getData: getData
+    getData() {
+      this.$http.get('/dentist/registrations')
+          .then(({data}) => this.registrations = data)
+          .catch(response => console.log(response))
+
+    },
+    deleteRegistration(registrationId) {
+      console.log(registrationId);
+      this.$http.delete(`/dentist/delete-registration/${registrationId}`)
+          .then(() => {
+            this.getData()
+
+          })
+    }
+
   },
   mounted() {
     this.getData();
