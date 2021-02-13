@@ -48,12 +48,13 @@ export default {
 
     },
     deleteRegistration(registrationId) {
-      console.log(registrationId);
+      this.$confirm("Are you sure?")
+      .then(() => {
       this.$http.delete(`/dentist/delete-registration/${registrationId}`)
           .then(() => {
             this.getData()
 
-          })
+          });
     }
 
   },
