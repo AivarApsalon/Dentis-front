@@ -31,7 +31,7 @@
 </template>
 
 <script>
-let getData;
+
 export default {
   name: 'AllRegistrations',
   components: {},
@@ -41,25 +41,30 @@ export default {
     }
   },
   methods: {
-    getData() {
-      this.$http.get('/dentist/registrations')
-          .then(({data}) => this.registrations = data)
-          .catch(response => console.log(response))
+    async getData() {
+      try {
+        const {data} = await this.$http.get('/dentist/registrations');
+        this.registrations = data;
+      } catch (error) {
+        console.log(error);
+      }
 
     },
-    deleteRegistration(registrationId) {
-      this.$confirm("Are you sure?")
-      .then(() => {
-      this.$http.delete(`/dentist/delete-registration/${registrationId}`)
-          .then(() => {
-            this.getData()
+    async deleteRegistration(registrationId) {
+      try {
+        await this.$confirm("Are you sure?");
+        await this.$http.delete(`/dentist/delete-registration/${registrationId}`);
+        await this.getData()
+      } catch (error) {
+        console.log(error);
+      }
 
-          });
-    }
+    },
 
   },
   mounted() {
     this.getData();
   }
+
 }
 </script>
