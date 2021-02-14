@@ -23,6 +23,9 @@
         <td>
           <button @click="deleteRegistration(registration.id)">Delete</button>
         </td>
+        <td>
+          <button @click="changeRegistration(registration.id)">Change</button>
+        </td>
       </tr>
 
     </table>
@@ -53,6 +56,17 @@ export default {
     async deleteRegistration(registrationId) {
       try {
         await this.$confirm("Are you sure?");
+        await this.$http.delete(`/dentist/delete-registration/${registrationId}`);
+        await this.getData()
+      } catch (error) {
+        console.log(error);
+      }
+
+    },
+
+    async changeRegistration(registrationId) {
+      try {
+        // await this.$confirm("Are you sure?");
         await this.$http.delete(`/dentist/delete-registration/${registrationId}`);
         await this.getData()
       } catch (error) {

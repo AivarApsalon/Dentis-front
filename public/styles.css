@@ -38,9 +38,10 @@ nav {
 
 nav ul {
     margin-left: 0px;
-    padding: 5px;
+    padding: 8px;
     list-style: none;
-    margin-top: -9px;
+    margin-top: -11px;
+    margin-right: 384px
 
 }
 

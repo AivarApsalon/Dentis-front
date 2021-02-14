@@ -30,11 +30,11 @@ export default {
   name: "AddRegistration",
   data: function () {
     return {
-      date: '2020-01-01',
-      time: '02:00:00',
-      firstName: 'Eesnimi',
-      lastName: 'Perenimi',
-      idCardNr: 'AA158',
+      date: '',
+      time: '',
+      firstName: '',
+      lastName: '',
+      idCardNr: '',
       selectedDentist: null,
       registrationBody: {}
 
