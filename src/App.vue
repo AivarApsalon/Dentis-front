@@ -14,6 +14,8 @@
           |
           <router-link to="/registrations-by-id">Get Registration</router-link>
           |
+          <router-link to="/dentist-list">Dentist List</router-link>
+          |
         </ul>
       </nav>
 

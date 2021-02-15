@@ -3,15 +3,15 @@
     <p> Get Registration </p>
     <div>Registration Id <input v-model="registrationId" placeholder="Registration Id"></div>
     <button v-on:click="getData()">Get Registration</button>
-    <div>Registration Id: {{registration.id}} </div>
-    <div>Date: {{registration.date}} </div>
-    <div>Time: {{registration.time}} </div>
-    <div>First Name: {{registration.firstName}} </div>
-    <div>Last Name: {{registration.lastName}} </div>
-    <div>Id Card Nr: {{registration.idCardNr}} </div>
-    <div>Dentist Id: {{registration.dentistId}} </div>
+    <div>Registration Id: {{ registration.id }}</div>
+    <div>Date: {{ registration.date }}</div>
+    <div>Time: {{ registration.time }}</div>
+    <div>First Name: {{ registration.firstName }}</div>
+    <div>Last Name: {{ registration.lastName }}</div>
+    <div>Id Card Nr: {{ registration.idCardNr }}</div>
+    <div>Dentist Id: {{ registration.dentistId }}</div>
 
-<button v-on:click="confirmDelete()">Delete Registration</button>
+    <button v-on:click="confirmDelete()">Delete Registration</button>
 
   </div>
 </template>
@@ -23,19 +23,18 @@ let getData = function () {
       .catch(response => console.log(response))
 
 }
-let confirmDelete =function (){
-  this.$confirm("Are you sure?")
+let confirmDelete = function () {
+  this.$confirm("Delete Registration?")
       .then(() => {
         this.$http.delete('/dentist/delete-registration/' + this.registrationId);
         this.registration = {}
-  });
+      });
 
 }
 
 
 export default {
   name: 'RegistrationById',
-  // components: {},
   data: function () {
     return {
       registration: {},
@@ -46,8 +45,5 @@ export default {
     getData: getData,
     confirmDelete: confirmDelete
   },
-  // mounted() {
-  //   this.getData();
-  // }
 }
 </script>

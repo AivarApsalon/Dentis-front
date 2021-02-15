@@ -10,7 +10,8 @@
         <th>Last Name</th>
         <th>Id Card Nr</th>
         <th>Dentist Name</th>
-
+        <th> Action 1</th>
+        <th> Action 2</th>
       </tr>
       <tr v-for="registration in registrations">
         <td>{{ registration.id }}</td>
@@ -20,14 +21,13 @@
         <td>{{ registration.lastName }}</td>
         <td>{{ registration.idCardNr }}</td>
         <td>{{ registration.dentistName }}</td>
+        <div class="link">
+          <router-link :to="{name: 'ChangeRegistration', params: {id: registration.id }}"> Change</router-link>
+        </div>
         <td>
           <button @click="deleteRegistration(registration.id)">Delete</button>
         </td>
-        <td>
-          <button @click="changeRegistration(registration.id)">Change</button>
-        </td>
       </tr>
-
     </table>
   </div>
 
@@ -56,17 +56,6 @@ export default {
     async deleteRegistration(registrationId) {
       try {
         await this.$confirm("Are you sure?");
-        await this.$http.delete(`/dentist/delete-registration/${registrationId}`);
-        await this.getData()
-      } catch (error) {
-        console.log(error);
-      }
-
-    },
-
-    async changeRegistration(registrationId) {
-      try {
-        // await this.$confirm("Are you sure?");
         await this.$http.delete(`/dentist/delete-registration/${registrationId}`);
         await this.getData()
       } catch (error) {
