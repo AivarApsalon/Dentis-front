@@ -5,10 +5,8 @@
 
     <div class="select-list">Select dentist
       <select v-model="dentistId">
-        <option value="1">Kask</option>
-        <option value="2">Kuusk</option>
-        <option value="3">Palm</option>
-        <option value="4">Pihl</option>
+        <option v-for="dentist in dentistList" :value="dentist.id">{{dentist.dentistName}} </option>
+
       </select>
 
       <button v-on:click="getData()">Get Registrations</button>
@@ -17,7 +15,7 @@
 
     <p></p>
 
-    <table border="table1">
+    <table v-if="registrations.length" border="table1">
       <tr>
         <th>Reg.ID</th>
         <th>Date</th>
@@ -36,9 +34,9 @@
         <td>{{ registration.lastName }}</td>
         <td>{{ registration.idCardNr }}</td>
         <td>{{ registration.dentistName }}</td>
-
       </tr>
     </table>
+    <p v-else>No Registrations</p>
   </div>
 
 </template>
@@ -51,22 +49,30 @@ export default {
   data: function () {
     return {
       registrations: [],
-      dentistId: ''
+      dentistId: '',
+      dentistList: []
     }
   },
   methods: {
-    async getData() {
+    getData() {
+      this.$http.get('/dentist/registrations-by-dentist-id/' + this.dentistId)
+          .then(response => {
+            this.registrations = response.data
+          })
+    },
+    async getDentistList() {
       try {
-        const {data} = await this.$http.get('/dentist/registrations-by-dentist-id/' + this.dentistId);
-        this.registrations = data;
+        const {data} = await this.$http.get('/dentist/dentist-list');
+        this.dentistList = data;
+        console.log(this.dentistList)
       } catch (error) {
         console.log(error);
       }
-
-    },
-
+    }
+  },
+  mounted() {
+    this.getDentistList();
   }
-
 }
 </script>
 

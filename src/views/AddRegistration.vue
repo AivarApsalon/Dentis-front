@@ -9,6 +9,8 @@
     <div>Last Name <input v-model="lastName" placeholder="Last Name"></div>
     <div>ID Card Nr <input v-model="idCardNr" placeholder="Id Card Nr"></div>
 
+    <timeselector :value="time2"></timeselector>
+
     <div>Select dentist
       <select v-model="selectedDentist">
         <option value="1">Kask</option>
@@ -27,8 +29,13 @@
 
 let getData = function () {
 }
+import Timeselector from 'vue-timeselector';
 
 export default {
+  components: {
+    Timeselector
+  },
+
   name: "AddRegistration",
   data: function () {
     return {
@@ -38,7 +45,8 @@ export default {
       lastName: '',
       idCardNr: '',
       selectedDentist: null,
-      registrationBody: {}
+      registrationBody: {},
+      time2: new Date()
     }
 
   },
@@ -61,6 +69,9 @@ export default {
             this.idCardNr = '';
             this.selectedDentist = '';
             this.registrationBody = null;
+          })
+          .then((response) => {
+            (this.$alert("Registration added!"))
           })
     },
   },

@@ -11,6 +11,7 @@
         <option value="1">Kask</option>
         <option value="2">Kuusk</option>
         <option value="3">Palm</option>
+        <option value="4">Pihl</option>
       </select>
     </div>
 
