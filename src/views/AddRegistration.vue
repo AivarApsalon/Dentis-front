@@ -1,6 +1,8 @@
 <template>
   <div class="input">
-    <p> Add Registration </p>
+
+    <p class="addRegistration"> Add Registration </p>
+
     <div>Date <input v-model="date" placeholder="Date"></div>
     <div>Time <input v-model="time" placeholder="Time"></div>
     <div>First Name <input v-model="firstName" placeholder="First Name"></div>
@@ -12,9 +14,9 @@
         <option value="1">Kask</option>
         <option value="2">Kuusk</option>
         <option value="3">Palm</option>
+        <option value="4">Pihl</option>
       </select>
     </div>
-
 
     <button v-on:click="saveRegistration()">Add Registration</button>
 
@@ -37,7 +39,6 @@ export default {
       idCardNr: '',
       selectedDentist: null,
       registrationBody: {}
-
     }
 
   },

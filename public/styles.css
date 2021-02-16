@@ -30,7 +30,7 @@ header::after {
 
 nav {
     height: 100px;
-    float: right;
+    float: left;
     margin-right: 120px;
     margin-left: 0px;
     padding: 8px;
@@ -41,7 +41,7 @@ nav ul {
     padding: 8px;
     list-style: none;
     margin-top: -11px;
-    margin-right: 384px
+    margin-right: 12px;
 
 }
 
@@ -94,8 +94,8 @@ p {
     font-size: 25px;
     text-align: right;
     margin-top: 5px;
-    margin-left: 10px;
-    margin-right: 950px;
+    margin-left: -332px;
+    margin-right: 1017px;
     padding-left: 340px;
 }
 
@@ -156,11 +156,50 @@ th {
 }
 
 .table1 {
-    border-block-width: 25px;
+    border-block-width: 30px;
     table-border-color-light: darkgray;
 
 }
 
+.dentists {
+    font-size: 20px;
+    margin-left: 200px;
+
+}
+
+.dentistList {
+    font-size: 20px;
+    padding-top: 148px;
+
+}
+
+.select-list {
+
+}
+.addRegistration {
+    color: darkgrey;
+    font-family: 'Arial Narrow';
+    font-size: 25px;
+    text-align: right;
+    margin-top: 5px;
+    margin-left: -332px;
+    margin-right: 1017px;
+    padding-left: 650px;
+
+}
+
+.changeRegistration {
+    color: darkgrey;
+    font-family: 'Arial Narrow';
+    font-size: 25px;
+    text-align: right;
+    margin-top: 5px;
+    margin-left: -332px;
+    margin-right: 1017px;
+    padding-left: 650px;
+
+
+}
 
 
 

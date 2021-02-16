@@ -8,13 +8,13 @@
           |
           <router-link to="/home">Home</router-link>
           |
+          <router-link to="/dentist-list">Dentist List</router-link>
+          |
           <router-link to="/add-registration">Add Registration</router-link>
           |
           <router-link to="/registrations">All Registrations</router-link>
           |
-          <router-link to="/registrations-by-id">Get Registration</router-link>
-          |
-          <router-link to="/dentist-list">Dentist List</router-link>
+          <router-link to="/registrations-by-dentist-id">Registrations By Dentist Name</router-link>
           |
         </ul>
       </nav>

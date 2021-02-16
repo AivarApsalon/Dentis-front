@@ -7,6 +7,8 @@ import GetRegistration from "@/views/GetRegistration";
 import DeleteRegistration from "@/views/DeleteRegistration";
 import ChangeRegistration from "@/views/ChangeRegistration";
 import DentistList from "@/views/DentistList";
+import RegistrationsByDentistId from "@/views/RegistrationsByDentistName";
+
 
 Vue.use(VueRouter)
 
@@ -46,6 +48,12 @@ const routes = [
         name: 'DentistList',
         component: DentistList
     },
+    {
+        path: '/registrations-by-dentist-id',
+        name: 'RegistrationsByDentistId',
+        component: RegistrationsByDentistId
+    },
+
 
 ]
 

@@ -1,6 +1,6 @@
 <template>
   <div class="input">
-    <p> Change Registration </p>
+    <p class="changeRegistration"> Change Registration </p>
     <div>Date <input v-model="registration.date" placeholder="Date"></div>
     <div>Time <input v-model="registration.time" placeholder="Time"></div>
     <div>First Name <input v-model="registration.firstName" placeholder="First Name"></div>
