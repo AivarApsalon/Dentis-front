@@ -5,8 +5,8 @@
       <tr>
         <th>Id</th>
         <th>Dentist Name</th>
-
       </tr>
+
       <tr v-for="dentist in dentists">
         <td>{{ dentist.id }}</td>
         <td>{{ dentist.dentistName }}</td>
@@ -35,14 +35,11 @@ export default {
       } catch (error) {
         console.log(error);
       }
-
     },
-
   },
   mounted() {
     this.getData();
   }
-
 }
 </script>
 
