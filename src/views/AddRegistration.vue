@@ -4,7 +4,7 @@
     <p class="addRegistration"> Add Registration </p>
 
     <div class="date">Select a date
-      <Datepicker v-model="date" format="yyyy-MM-dd"></Datepicker>
+      <span class="flex"><Datepicker v-model="date" format="yyyy-MM-dd"></Datepicker></span>
     </div>
 
     <div>Select Time
@@ -30,7 +30,10 @@
       </select>
     </div>
 
+    <div>
     <button v-on:click="saveRegistration()">Add Registration</button>
+    <span v-if="error">Please choose other date or time</span>
+    </div>
 
   </div>
 </template>
@@ -39,14 +42,12 @@
 
 let getData = function () {
 }
-import Timeselector from 'vue-timeselector';
-import TimePicker from 'vue2-timepicker'
+
 import Datepicker from 'vuejs-datepicker';
 
 export default {
   components: {
-    Timeselector,
-    TimePicker,
+
     Datepicker
 
   },
@@ -62,12 +63,14 @@ export default {
       registrationBody: {},
 
       dentistId: '',
-      dentistList: []
+      dentistList: [],
+      error: false
     }
 
   },
   methods: {
     saveRegistration() {
+      this.error=false
       this.registrationBody = {
         date: this.date.toISOString().substring(0, 10),
         time: this.time,
@@ -90,7 +93,7 @@ export default {
             (this.$alert("Registration added!"))
           })
           .catch((error) => {
-            console.log(error);
+            this.error=true
           });
     },
     async getDentistList() {

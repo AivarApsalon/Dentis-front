@@ -8,18 +8,18 @@ body {
 .container {
     color: darkgrey;
     font-family: 'Work Sans', sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     word-spacing: 4px;
     width: 90%;
     height: auto;
-    margin-left: 50px;
+    margin-left: 75px;
 
 }
 
 header {
     background-color: #48558a;
-    margin: auto;
     height: 120px;
+    margin-top: -5px;
 }
 
 header::after {
@@ -47,13 +47,14 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin-left: 35px;
+    margin-left: 25px;
     padding-top: 30px;
     margin-top: 10px;
     position: relative
 }
+
 nav li:hover,
-nav li:active{
+nav li:active {
     background-color: indianred;
     cursor: pointer;
 }
@@ -62,7 +63,7 @@ nav a {
     color: darkgray;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 17px;
 
 }
 
@@ -110,7 +111,6 @@ h1 {
 
 }
 
-
 .aivar {
     height: 1px;
     border-width: 0;
@@ -140,10 +140,11 @@ h1 {
 
 }
 
-.registrations{
-    font-size: 18px;
+.registrations {
+    font-size: 20px;
     padding-top: 160px;
     font-weight: lighter;
+    padding-left: 160px;
 
 }
 
@@ -169,13 +170,15 @@ th {
 
 .dentistList {
     font-size: 20px;
-    padding-top: 148px;
-
+    padding-top: 160px;
+    font-weight: lighter;
+    padding-left: 200px;
 }
 
 .select-list {
 
 }
+
 .addRegistration {
     color: darkgrey;
     font-family: 'Arial Narrow';
@@ -205,8 +208,25 @@ th {
 
 }
 
+.welcome1 {
+    padding-top: 150px;
+    horiz-align: center;
 
+}
 
+.welcome2 {
+    padding-top: 20px;
+
+}
+
+.welcome3 {
+    padding-top: 20px;
+
+}
+
+.home {
+    padding-top: 10px;
+}
 
 
 
