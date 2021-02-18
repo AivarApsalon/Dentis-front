@@ -11,6 +11,7 @@ https://github.com/AivarApsalon/Dentist-front
 Check on CMD:
 npm -v
 
+If you don't have npm
 - npm install
 - https://www.npmjs.com/get-npm
 
