@@ -1,19 +1,36 @@
-# dentist
+## Steps to Setup
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+**1. Clone the application**
+```bash
+https://github.com/AivarApsalon/Dentist-front
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+**2.Project setup and run**
+```bash
+- https://www.npmjs.com/get-npm
+Check on CMD:
+npm -v
+
+If you don't have npm
+- npm install
+- https://www.npmjs.com/get-npm
+
+
+- In IDE terminal you have to type in your project location: 
+  npm run serve
+
+There you will see, on what URL it will run.
+For example:  - Local:   http://localhost:8081/
+
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+
+
+
+
+
+
+
