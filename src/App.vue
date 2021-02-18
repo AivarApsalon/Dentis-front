@@ -1,27 +1,32 @@
 <template>
-  <header>
-
-    <div class="container">
-      <nav>
+  <div>
+    <header>
+      <nav class="menu">
+        <h1>Dentist</h1>
         <ul>
-          <li class="name">Dentist</li>
-          |
-          <router-link to="/home">Home</router-link>
-          |
-          <router-link to="/dentist-list">Dentist List</router-link>
-          |
-          <router-link to="/add-registration">Add Registration</router-link>
-          |
-          <router-link to="/registrations">All Registrations</router-link>
-          |
-          <router-link to="/registrations-by-dentist-id">Registrations By Dentist Name</router-link>
-          |
+          <li>
+            <router-link to="/home">Home</router-link>
+          </li>
+          <li>
+            <router-link to="/dentist-list">Dentists</router-link>
+          </li>
+          <li>
+            <router-link to="/add-registration">Add Registration</router-link>
+          </li>
+          <li>
+            <router-link to="/registrations">All Registrations</router-link>
+          </li>
+          <li>
+            <router-link to="/registrations-by-dentist-id">Dentist registrations</router-link>
+          </li>
         </ul>
       </nav>
+    </header>
 
+    <main>
       <router-view/>
-    </div>
-  </header>
+    </main>
+  </div>
 
 </template>
 

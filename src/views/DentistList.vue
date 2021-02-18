@@ -1,16 +1,15 @@
 <template>
-  <div class="dentistList">
+  <div id="dentistList">
 
-    <table border="table1">
-      <tr>
-        <th>Id</th>
-        <th>Dentist Name</th>
-      </tr>
+    <table>
+      <thead>
+      <th>Id</th>
+      <th>Dentist Name</th>
+      </thead>
 
       <tr v-for="dentist in dentists">
         <td>{{ dentist.id }}</td>
         <td>{{ dentist.dentistName }}</td>
-
       </tr>
     </table>
   </div>

@@ -1,18 +1,18 @@
 <template>
-  <div class="registrations">
+  <div id="registrations">
 
-    <table border="table1">
-      <tr>
-        <th>Reg.ID</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Id Card Nr</th>
-        <th>Dentist Name</th>
-        <th> Action 1</th>
-        <th> Action 2</th>
-      </tr>
+    <table>
+      <thead>
+      <th>Reg.ID</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Id Card Nr</th>
+      <th>Dentist Name</th>
+      <th></th>
+      <th></th>
+      </thead>
       <tr v-for="registration in registrations">
         <td>{{ registration.id }}</td>
         <td>{{ registration.date }}</td>
@@ -21,9 +21,9 @@
         <td>{{ registration.lastName }}</td>
         <td>{{ registration.idCardNr }}</td>
         <td>{{ registration.dentistName }}</td>
-        <div class="link">
+        <td>
           <router-link :to="{name: 'ChangeRegistration', params: {id: registration.id }}"> Change</router-link>
-        </div>
+        </td>
         <td>
           <button @click="deleteRegistration(registration.id)">Delete</button>
         </td>
@@ -71,3 +71,7 @@ export default {
 
 }
 </script>
+
+<style scoped>
+
+</style>

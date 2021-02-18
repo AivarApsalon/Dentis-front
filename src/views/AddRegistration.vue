@@ -1,13 +1,22 @@
 <template>
-  <div class="input">
+  <div id="addRegistration">
 
-    <p class="addRegistration"> Add Registration </p>
+    <h2>Add Registration</h2>
 
-    <div class="date">Select a date
-      <span class="flex"><Datepicker v-model="date" format="yyyy-MM-dd"></Datepicker></span>
+    <div class="error-message" v-if="error">Please choose other date or time</div>
+
+    <div class="form-row">
+      <label>
+        Select a date
+        <div></div>
+      </label>
+      <div>
+        <Datepicker v-model="date" format="yyyy-MM-dd"></Datepicker>
+      </div>
     </div>
 
-    <div>Select Time
+    <div class="form-row">
+      <label>Select Time</label>
       <select v-model="time">
         <option value="09:00">09:00</option>
         <option value="10:00">10:00</option>
@@ -20,19 +29,30 @@
       </select>
     </div>
 
-    <div>First Name <input v-model="firstName" placeholder="First Name"></div>
-    <div>Last Name <input v-model="lastName" placeholder="Last Name"></div>
-    <div>ID Card Nr <input v-model="idCardNr" placeholder="Id Card Nr"></div>
+    <div class="form-row">
+      <label>First Name</label>
+      <input type="text" v-model="firstName">
+    </div>
 
-    <div class="select-list">Select dentist
+    <div class="form-row">
+      <label>Last Name</label>
+      <input type="text" v-model="lastName">
+    </div>
+
+    <div class="form-row">
+      <label>ID Card Nr</label>
+      <input type="text" v-model="idCardNr">
+    </div>
+
+    <div class="form-row">
+      <label>Select dentist</label>
       <select v-model.number="selectedDentist">
         <option v-for="dentist in dentistList" :value="dentist.id">{{ dentist.dentistName }}</option>
       </select>
     </div>
 
-    <div>
-    <button v-on:click="saveRegistration()">Add Registration</button>
-    <span v-if="error">Please choose other date or time</span>
+    <div class="submit_container">
+      <button v-on:click="saveRegistration()">Add Registration</button>
     </div>
 
   </div>

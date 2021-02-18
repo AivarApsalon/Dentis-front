@@ -1,61 +1,51 @@
 body {
-    margin: 0px;
     background-color: #253c4d;
-    font-family: 'Work Sans', sans-serif;
-
-}
-
-.container {
     color: darkgrey;
     font-family: 'Work Sans', sans-serif;
-    font-size: 40px;
-    word-spacing: 4px;
-    width: 90%;
-    height: auto;
-    margin-left: 75px;
-
+    margin: 0 auto;
+    font-size: 16px;
 }
 
 header {
+    display: flex;
     background-color: #48558a;
     height: 120px;
-    margin-top: -5px;
+    margin-bottom: 2rem;
+}
+
+main {
+    display: flex;
+}
+
+nav, main {
+    width: 1200px;
+    margin: 0 auto;
 }
 
 header::after {
-
     display: table;
     clear: both;
 }
 
-nav {
-    height: 100px;
-    float: left;
-    margin-right: 120px;
-    margin-left: 0px;
-    padding: 8px;
+ul {
+    margin: 0;
+    padding: 0;
 }
 
-nav ul {
-    margin-left: 0px;
-    padding: 8px;
-    list-style: none;
-    margin-top: -11px;
-    margin-right: 12px;
-
+li {
+    display: inline-flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-right: solid 1px;
 }
 
-nav li {
-    display: inline-block;
-    margin-left: 25px;
-    padding-top: 30px;
-    margin-top: 10px;
-    position: relative
+li:first-child {
+    padding-left: 0;
 }
 
 nav li:hover,
 nav li:active {
-    background-color: indianred;
+    color: #253c4d;
     cursor: pointer;
 }
 
@@ -64,169 +54,89 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 17px;
-
 }
 
 nav a:hover {
     color: #253c4d;
-
-}
-
-nav a::before {
-    content: '';
-    display: block;
-    height: 2px;
-    background-color: darkgray;
-
-    position: absolute;
-    top: 25px;
-    width: 0%;
-
-    transition: all ease-in-out 250ms;
 }
 
 nav a:hover::before {
     width: 100%;
 }
 
-p {
-    color: darkgrey;
-    font-family: 'Arial Narrow';
-    font-size: 25px;
-    text-align: right;
-    margin-top: 5px;
-    margin-left: -332px;
-    margin-right: 1017px;
-    padding-left: 340px;
+table {
+    border: solid 1px;
+    min-width: 200px;
+    border-spacing: 0;
 }
 
-h1 {
-    color: darkgray;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: lighter;
-    font-size: 23px;
-    margin-right: 992px;
-    text-align: right;
-    padding-top: 25px;
-
-}
-
-.aivar {
-    height: 1px;
-    border-width: 0;
-    color: gray;
-    background-color: darkgray;
-    margin-left: 20px;
-    margin-right: 992px;
-}
-
-.bank_name {
-    font-size: 40px;
-    padding-right: 20px;
-    margin-bottom: 9px;
-    margin-top: 6px;
-    border-right: solid 1px darkgrey;
-}
-
-.input {
-
-    padding-top: 200px;
-    color: darkgrey;
-    font-family: 'Arial Narrow';
-    font-size: 20px;
-    text-align: right;
-    margin-left: 60px;
-    margin-right: 892px;
-
-}
-
-.registrations {
-    font-size: 20px;
-    padding-top: 160px;
-    font-weight: lighter;
-    padding-left: 160px;
-
+th, td {
+    padding: .5rem;
 }
 
 th {
-    font-weight: lighter;
-    font-family: sans-serif;
     text-align: left;
-    background-color: #48558a;
-
+    min-width: 30px;
+    border-bottom: solid 1px;
 }
 
-.table1 {
-    border-block-width: 30px;
-    table-border-color-light: darkgray;
-
+td {
+    padding: 4px .5rem;
 }
 
-.dentists {
-    font-size: 20px;
-    margin-left: 200px;
-
+tr:hover {
+    background-color: #6b4242;
 }
 
-.dentistList {
-    font-size: 20px;
-    padding-top: 160px;
-    font-weight: lighter;
-    padding-left: 200px;
+#addRegistration, #changeRegistration {
+    min-width: 300px;
 }
 
-.select-list {
-
-}
-
-.addRegistration {
-    color: darkgrey;
-    font-family: 'Arial Narrow';
-    font-size: 25px;
+.submit_container {
     text-align: right;
-    margin-top: 5px;
-    margin-left: -332px;
-    margin-right: 1017px;
-    padding-left: 650px;
-
 }
 
-.changeRegistration {
-    color: darkgrey;
-    font-family: 'Arial Narrow';
-    font-size: 25px;
-    text-align: right;
-    margin-top: 5px;
-    margin-left: -332px;
-    margin-right: 1017px;
-    padding-left: 650px;
-
+.form-row {
+    display: flex;
+    margin-bottom: 1rem;
 }
 
-.date {
-    padding-left: 265px;
-
+.form-row > * {
+    flex: 1;
 }
 
-.welcome1 {
-    padding-top: 150px;
-    horiz-align: center;
-
+.form-row label {
+    padding: .5rem 0;
 }
 
-.welcome2 {
-    padding-top: 20px;
-
+input[type=text] {
+    padding: 0.5rem;
+    border: unset;
+    border-bottom: 1px solid white;
+    background: #253c4d;
+    color: inherit;
+    font-size: initial;
 }
 
-.welcome3 {
-    padding-top: 20px;
-
+button {
+    padding: .5rem;
 }
 
-.home {
-    padding-top: 10px;
+a {
+    color: white;
+    text-decoration: unset;
 }
+
+.error-message {
+    color: #d89393;
+    margin-bottom: 1rem;
+}
+
+#dentistRegistrations .form {
+    max-width: 300px;
+    margin-bottom: 2rem;
+}
+
 
 
 

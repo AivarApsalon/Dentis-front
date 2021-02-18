@@ -1,36 +1,53 @@
 <template>
-  <div class="input">
+  <div id="changeRegistration">
 
-    <p class="changeRegistration"> Change Registration </p>
+    <h2> Change Registration </h2>
 
-    <div class="date">Select a date
-      <Datepicker v-model="registration.date" format="yyyy-MM-dd"></Datepicker>
+    <div class="form-row">
+      <label>Select a date</label>
+      <div>
+        <Datepicker v-model="registration.date" format="yyyy-MM-dd"></Datepicker>
+      </div>
     </div>
 
-    <div>Select Time
+    <div class="form-row">
+      <label>Select Time</label>
       <select v-model="registration.time">
-        <option value="09:00">09:00</option>
-        <option value="10:00">10:00</option>
-        <option value="11:00">11:00</option>
-        <option value="12:00">12:00</option>
-        <option value="13:00">13:00</option>
-        <option value="14:00">14:00</option>
-        <option value="15:00">15:00</option>
-        <option value="16:00">16:00</option>
+        <option value="09:00:00">09:00</option>
+        <option value="10:00:00">10:00</option>
+        <option value="11:00:00">11:00</option>
+        <option value="12:00:00">12:00</option>
+        <option value="13:00:00">13:00</option>
+        <option value="14:00:00">14:00</option>
+        <option value="15:00:00">15:00</option>
+        <option value="16:00:00">16:00</option>
       </select>
     </div>
 
-    <div>First Name <input v-model="registration.firstName" placeholder="First Name"></div>
-    <div>Last Name <input v-model="registration.lastName" placeholder="Last Name"></div>
-    <div>ID Card Nr <input v-model="registration.idCardNr" placeholder="Id Card Nr"></div>
+    <div class="form-row">
+      <label>First Name</label>
+      <input type="text" v-model="registration.firstName" placeholder="First Name">
+    </div>
 
-    <div class="select-list">Select dentist
+    <div class="form-row">
+      <label>Last Name</label>
+      <input type="text" v-model="registration.lastName" placeholder="Last Name">
+    </div>
+
+    <div class="form-row">
+      <label>ID Card Nr</label>
+      <input type="text" v-model="registration.idCardNr" placeholder="Id Card Nr">
+    </div>
+
+    <div class="form-row">
+      <label>Select dentist</label>
       <select v-model="registration.dentistId">
         <option v-for="dentist in dentistList" :value="dentist.id">{{ dentist.dentistName }}</option>
       </select>
+    </div>
 
-      <button v-on:click="changeRegistration()">Change Registration</button>
-
+    <div class="submit_container">
+      <button @click="changeRegistration()">Change Registration</button>
     </div>
 
   </div>
@@ -42,6 +59,7 @@
 import Timeselector from 'vue-timeselector';
 import TimePicker from 'vue2-timepicker'
 import Datepicker from 'vuejs-datepicker';
+import router from "@/router";
 
 export default {
   components: {
@@ -66,12 +84,11 @@ export default {
 
     changeRegistration() {
       this.$confirm("Change Registration?")
-          .then(() => {
+          .then(async () => {
             let id = this.$route.params.id;
-            this.$http.put('dentist/change-registration/' + id, this.registration);
+            await this.$http.put('dentist/change-registration/' + id, this.registration);
             this.registration = {}
-
-
+            await router.push({ path: '/registrations' });
           })
     },
 

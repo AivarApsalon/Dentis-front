@@ -1,12 +1,11 @@
 <template>
-  <div class="home">
+  <div id="home">
 
-    <p class="welcome1">WELCOME!</p>
+    <p>Welcome</p>
 
-    <p class="welcome2">PLEASE CHECK OUR DENTIST LIST AND PROCEED TO: ADD REGISTRATION</p>
+    <p>PLEASE CHECK OUR DENTIST LIST AND PROCEED TO: ADD REGISTRATION</p>
 
-    <p class="welcome3">SEE YOU SOON!</p>
-
+    <p>SEE YOU SOON!</p>
 
   </div>
 </template>

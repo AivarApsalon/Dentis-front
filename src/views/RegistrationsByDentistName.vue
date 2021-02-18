@@ -1,31 +1,33 @@
 <template>
-  <div class="registrations">
+  <div id="dentistRegistrations">
 
-    <p> Get Registrations By Dentist Name </p>
+    <h2> Get Registrations By Dentist Name </h2>
 
-    <div class="select-list">Select dentist
-      <select v-model="dentistId">
-        <option v-for="dentist in dentistList" :value="dentist.id">{{dentist.dentistName}} </option>
+    <div class="form">
+      <div class="form-row">
+        <label>Select dentist</label>
+        <select v-model="dentistId">
+          <option v-for="dentist in dentistList" :value="dentist.id">
+            {{ dentist.dentistName }}
+          </option>
+        </select>
+      </div>
 
-      </select>
-
-      <button v-on:click="getData()">Get Registrations</button>
-
+      <div class="submit_container">
+        <button @click="getData()">Get Registrations</button>
+      </div>
     </div>
 
-    <p></p>
-
-    <table v-if="registrations.length" border="table1">
-      <tr>
-        <th>Reg.ID</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Id Card Nr</th>
-        <th>Dentist Name</th>
-
-      </tr>
+    <table v-if="registrations.length">
+      <thead>
+      <th>Reg.ID</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Id Card Nr</th>
+      <th>Dentist Name</th>
+      </thead>
       <tr v-for="registration in registrations">
         <td>{{ registration.id }}</td>
         <td>{{ registration.date }}</td>
@@ -36,7 +38,11 @@
         <td>{{ registration.dentistName }}</td>
       </tr>
     </table>
-    <p v-else>No Registrations</p>
+
+    <div v-if="showList && !registrations.length">
+      No regstrations
+    </div>
+
   </div>
 
 </template>
@@ -50,7 +56,8 @@ export default {
     return {
       registrations: [],
       dentistId: '',
-      dentistList: []
+      dentistList: [],
+      showList: false
     }
   },
   methods: {
@@ -58,13 +65,13 @@ export default {
       this.$http.get('/dentist/registrations-by-dentist-id/' + this.dentistId)
           .then(response => {
             this.registrations = response.data
-          })
+            this.showList = true;
+          });
     },
     async getDentistList() {
       try {
         const {data} = await this.$http.get('/dentist/dentist-list');
         this.dentistList = data;
-        console.log(this.dentistList)
       } catch (error) {
         console.log(error);
       }
