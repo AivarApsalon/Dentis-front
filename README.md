@@ -7,7 +7,6 @@ https://github.com/AivarApsalon/Dentist-front
 
 **2.Project setup and run**
 ```bash
-- https://www.npmjs.com/get-npm
 Check on CMD:
 npm -v
 
