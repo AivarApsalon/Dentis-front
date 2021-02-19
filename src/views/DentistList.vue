@@ -4,7 +4,7 @@
     <table>
       <thead>
       <th>Id</th>
-      <th>Dentist Name</th>
+      <th>Dentist name</th>
       </thead>
 
       <tr v-for="dentist in dentists">

@@ -1,7 +1,9 @@
 <template>
   <div id="changeRegistration">
 
-    <h2> Change Registration </h2>
+    <h2> Change registration </h2>
+
+    <div class="error-message" v-if="error">This time is already taken!</div>
 
     <div class="form-row">
       <label>Select a date</label>
@@ -11,7 +13,7 @@
     </div>
 
     <div class="form-row">
-      <label>Select Time</label>
+      <label>Select time</label>
       <select v-model="registration.time">
         <option value="09:00:00">09:00</option>
         <option value="10:00:00">10:00</option>
@@ -25,17 +27,17 @@
     </div>
 
     <div class="form-row">
-      <label>First Name</label>
+      <label>First name</label>
       <input type="text" v-model="registration.firstName" placeholder="First Name">
     </div>
 
     <div class="form-row">
-      <label>Last Name</label>
+      <label>Last name</label>
       <input type="text" v-model="registration.lastName" placeholder="Last Name">
     </div>
 
     <div class="form-row">
-      <label>ID Card Nr</label>
+      <label>ID card nr</label>
       <input type="text" v-model="registration.idCardNr" placeholder="Id Card Nr">
     </div>
 
@@ -47,7 +49,7 @@
     </div>
 
     <div class="submit_container">
-      <button @click="changeRegistration()">Change Registration</button>
+      <button @click="changeRegistration()">Change registration</button>
     </div>
 
   </div>
@@ -71,7 +73,8 @@ export default {
   data: function () {
     return {
       registration: {},
-      dentistList: []
+      dentistList: [],
+      error: false
     }
   },
   methods: {
@@ -83,13 +86,16 @@ export default {
     },
 
     changeRegistration() {
-      this.$confirm("Change Registration?")
+      this.$confirm("Change registration?")
           .then(async () => {
             let id = this.$route.params.id;
             await this.$http.put('dentist/change-registration/' + id, this.registration);
             this.registration = {}
             await router.push({ path: '/registrations' });
           })
+          .catch((error) => {
+            this.error=true
+          });
     },
 
     async getDentistList() {

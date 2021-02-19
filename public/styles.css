@@ -3,7 +3,7 @@ body {
     color: darkgrey;
     font-family: 'Work Sans', sans-serif;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 header {
@@ -11,6 +11,7 @@ header {
     background-color: #48558a;
     height: 120px;
     margin-bottom: 2rem;
+    font-size: 20px;
 }
 
 main {
@@ -128,7 +129,7 @@ a {
 }
 
 .error-message {
-    color: #d89393;
+    color: #d45d55;
     margin-bottom: 1rem;
 }
 
@@ -137,8 +138,18 @@ a {
     margin-bottom: 2rem;
 }
 
+.welcome1 {
+    font-size: 24px;
+    color: thistle;
+}
 
+.welcome2 {
+    font-size: 20px;
+}
 
+h2 {
+    font-weight: lighter;
+}
 
 
 

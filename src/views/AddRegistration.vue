@@ -1,14 +1,13 @@
 <template>
   <div id="addRegistration">
 
-    <h2>Add Registration</h2>
+    <h2>Add registration</h2>
 
-    <div class="error-message" v-if="error">Please choose other date or time</div>
+    <div class="error-message" v-if="error">This time is already taken!</div>
 
     <div class="form-row">
       <label>
         Select a date
-        <div></div>
       </label>
       <div>
         <Datepicker v-model="date" format="yyyy-MM-dd"></Datepicker>
@@ -16,7 +15,7 @@
     </div>
 
     <div class="form-row">
-      <label>Select Time</label>
+      <label>Select time</label>
       <select v-model="time">
         <option value="09:00">09:00</option>
         <option value="10:00">10:00</option>
@@ -30,17 +29,17 @@
     </div>
 
     <div class="form-row">
-      <label>First Name</label>
+      <label>First name</label>
       <input type="text" v-model="firstName">
     </div>
 
     <div class="form-row">
-      <label>Last Name</label>
+      <label>Last name</label>
       <input type="text" v-model="lastName">
     </div>
 
     <div class="form-row">
-      <label>ID Card Nr</label>
+      <label>ID card nr</label>
       <input type="text" v-model="idCardNr">
     </div>
 
@@ -52,7 +51,7 @@
     </div>
 
     <div class="submit_container">
-      <button v-on:click="saveRegistration()">Add Registration</button>
+      <button v-on:click="saveRegistration()">Add registration</button>
     </div>
 
   </div>

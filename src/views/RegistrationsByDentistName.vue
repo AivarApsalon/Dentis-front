@@ -1,7 +1,7 @@
 <template>
   <div id="dentistRegistrations">
 
-    <h2> Get Registrations By Dentist Name </h2>
+    <h2> Get registrations by dentist name </h2>
 
     <div class="form">
       <div class="form-row">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="submit_container">
-        <button @click="getData()">Get Registrations</button>
+        <button @click="getData()">Get registrations</button>
       </div>
     </div>
 
@@ -23,10 +23,10 @@
       <th>Reg.ID</th>
       <th>Date</th>
       <th>Time</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Id Card Nr</th>
-      <th>Dentist Name</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Id card nr</th>
+      <th>Dentist name</th>
       </thead>
       <tr v-for="registration in registrations">
         <td>{{ registration.id }}</td>
@@ -40,7 +40,7 @@
     </table>
 
     <div v-if="showList && !registrations.length">
-      No regstrations
+      No registrations to show!
     </div>
 
   </div>

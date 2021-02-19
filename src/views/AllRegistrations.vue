@@ -6,10 +6,10 @@
       <th>Reg.ID</th>
       <th>Date</th>
       <th>Time</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Id Card Nr</th>
-      <th>Dentist Name</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Id card nr</th>
+      <th>Dentist name</th>
       <th></th>
       <th></th>
       </thead>
@@ -55,7 +55,7 @@ export default {
     },
     async deleteRegistration(registrationId) {
       try {
-        await this.$confirm("Are you sure?");
+        await this.$confirm("Delete registration?");
         await this.$http.delete(`/dentist/delete-registration/${registrationId}`);
         await this.getData()
       } catch (error) {

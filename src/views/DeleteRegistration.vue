@@ -1,9 +1,9 @@
 <template>
   <div class="input">
-    <p> Delete Registration </p>
+    <p> Delete registration </p>
     <div> Registration Id <input v-model="registrationId" placeholder="Registration Id"></div>
 
-    <button v-on:click="saveInHtml()">Delete Registration</button>
+    <button v-on:click="saveInHtml()">Delete registration</button>
 
   </div>
 </template>
