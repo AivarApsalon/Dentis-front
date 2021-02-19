@@ -16,7 +16,7 @@ If you don't have npm
 - https://www.npmjs.com/get-npm
 
 
-- In IDE terminal you have to type in your project location: 
+- In terminal: 
   npm run serve
 
 There you will see, on what URL it will run.
